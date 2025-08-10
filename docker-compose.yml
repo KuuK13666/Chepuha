@@ -1,0 +1,14 @@
+# №1: Docker Compose — удобный запуск одним файлом
+version: "3.9"
+
+services:
+  bot:
+    build: .                   # №2: Собрать образ из Dockerfile в этом каталоге
+    container_name: tg-bot     # №3: Имя контейнера
+    restart: unless-stopped    # №4: Автоперезапуск при сбоях/ребуте сервера
+    env_file:
+      - .env                   # №5: Подтянуть BOT_TOKEN из .env
+    volumes:
+      - ./data:/app/data       # №6: БД (bot.db) хранится снаружи контейнера
+      - ./tracks:/app/tracks   # №7: Папка для аудио-файлов (на будущее)
+    command: ["python", "main.py"]  # №8: Явно задаём команду запуска

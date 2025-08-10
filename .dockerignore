@@ -1,0 +1,12 @@
+# №1: Чтобы лишнее не попало в образ
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.vscode/
+.idea/
+.venv/
+.env
+data/
+tracks/
+bot.db

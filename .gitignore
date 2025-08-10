@@ -1,0 +1,17 @@
+# created by virtualenv automatically
+# Исключаем папку виртуального окружения
+.venv/
+# Исключаем файл с секретами
+.env
+
+# Файлы окружения
+#.env
+.env.local
+
+# Папки
+#.venv/
+.idea/
+__pycache__/
+
+# Базы данных
+*.db
